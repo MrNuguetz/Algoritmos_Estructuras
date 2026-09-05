@@ -1,0 +1,4 @@
+{
+    "c-cpp-compile-run.c-linker-flags": "-lm",
+    "C_Cpp.errorSquiggles": "disabled"
+}
