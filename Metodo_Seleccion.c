@@ -17,13 +17,13 @@ int main(void){
 
 void seleccion(int *arreglo, int n){
 
-    int menor, aux;                         // 1
-
-    for(int i = 0; i < n - 1; i++){       // n
+    int menor, aux;                         // 2
+            //1         n      n 
+    for(int i = 0; i < n - 1; i++){       // 2n+1
 
         menor = i;                         // n - 1
-
-        for(int j = i + 1; j < n; j++){   // 
+                //1         n+1    n
+        for(int j = i + 1; j < n; j++){   // 2n +2
 
             if(arreglo[j] < arreglo[menor]){ // 1
                 menor = j;                   // 1

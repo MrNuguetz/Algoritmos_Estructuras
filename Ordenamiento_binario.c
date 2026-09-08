@@ -78,5 +78,7 @@ int busqueda(int *arr, int liminf, int limsup, int valor){
 //10+log2(n)=k(1)
 //10+log2(n)=k
 //log2(n)=k
+//Complejidad =O(n)
+
 
 

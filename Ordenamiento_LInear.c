@@ -26,5 +26,5 @@ int busqueda(int *arr,int n){
 }
 
 //Complejidad  T(n)= 2n+2(1)(1)+1
-//T(n)=2n+3
+//T(n)=2n+5
 //T(n)=n

@@ -17,7 +17,7 @@ int main(void){
 
 void insercion(int *arreglo, int n){
 
-    int actual, j;                         // 1
+    int actual, j;                         // 2
 
     for(int i = 1; i < n; i++){           // n - 1
 
