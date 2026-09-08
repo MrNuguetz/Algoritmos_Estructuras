@@ -1,24 +1,23 @@
 #include <stdio.h>
 
-void Ordenamiento(int *arreglo, int n);
-void quickSort(int *arreglo, int inicio, int fin);
-int particion(int *arreglo, int inicio, int fin);
+void Ordenamiento(int *arreglo, int inicio, int fin);
 
 int main(void){
 
     int n;
 
-    printf("Captura el tamaño del arreglo \n");
-    scanf("%d",&n);
+    printf("Cuantos numero deseas capturar: \n");
+    scanf("%d", &n);
 
     int arreglo[n];
 
     for(int i = 0; i < n; i++){
         printf("Captura el valor [%d]: ", i + 1);
-        scanf("%d",&arreglo[i]);
+        scanf("%d", &arreglo[i]);
     }
 
-    Ordenamiento(arreglo,n);
+    // Ordena todo el arreglo
+    Ordenamiento(arreglo, 0, n - 1);
 
     printf("\nArreglo ordenado:\n");
 
@@ -29,46 +28,39 @@ int main(void){
     return 0;
 }
 
-void Ordenamiento(int *arreglo, int n){
 
-    quickSort(arreglo, 0, n - 1);
-
-}
-
-void quickSort(int *arreglo, int inicio, int fin){
+void Ordenamiento(int *arreglo, int inicio, int fin){
 
     if(inicio < fin){
 
-        int posicionPivote;
+        int pivote = arreglo[fin];
+        int i = inicio - 1;
+        int aux;
 
-        posicionPivote = particion(arreglo, inicio, fin);
+        // Partición
+        for(int j = inicio; j < fin; j++){
 
-        quickSort(arreglo, inicio, posicionPivote - 1);
-        quickSort(arreglo, posicionPivote + 1, fin);
-    }
-}
+            if(arreglo[j] <= pivote){
 
-int particion(int *arreglo, int inicio, int fin){
+                i++;
 
-    int pivote = arreglo[fin];
-    int i = inicio - 1;
-    int aux;
-
-    for(int j = inicio; j < fin; j++){
-
-        if(arreglo[j] <= pivote){
-
-            i++;
-
-            aux = arreglo[i];
-            arreglo[i] = arreglo[j];
-            arreglo[j] = aux;
+                aux = arreglo[i];
+                arreglo[i] = arreglo[j];
+                arreglo[j] = aux;
+            }
         }
+
+        // Colocar el pivote en su posición
+        aux = arreglo[i + 1];
+        arreglo[i + 1] = arreglo[fin];
+        arreglo[fin] = aux;
+
+        int posicionPivote = i + 1;
+
+        // Ordenar lado izquierdo
+        Ordenamiento(arreglo, inicio, posicionPivote - 1);
+
+        // Ordenar lado derecho
+        Ordenamiento(arreglo, posicionPivote + 1, fin);
     }
-
-    aux = arreglo[i + 1];
-    arreglo[i + 1] = arreglo[fin];
-    arreglo[fin] = aux;
-
-    return i + 1;
 }

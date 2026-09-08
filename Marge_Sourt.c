@@ -8,7 +8,7 @@ int main(void){
 
     int n;
 
-    printf("Captura el tamaño del arreglo:\n");
+    printf("Cuantos numero deseas capturar:\n");
     scanf("%d", &n);
 
     int arreglo[n];
@@ -37,7 +37,7 @@ void Ordenamiento(int *arreglo, int n){
 }
 
 
-void mergeSort(int arreglo[], int inicio, int fin){
+void mergeSort(int *arreglo, int inicio, int fin){
 
     if(inicio < fin){
 
@@ -55,7 +55,7 @@ void mergeSort(int arreglo[], int inicio, int fin){
 }
 
 
-void merge(int arreglo[], int inicio, int medio, int fin){
+void merge(int *arreglo, int inicio, int medio, int fin){
 
     int n1 = medio - inicio + 1;
     int n2 = fin - medio;

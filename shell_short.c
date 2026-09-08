@@ -6,7 +6,7 @@ int main(void){
 
 int n;
 
-    printf("Captura el tamaño del arreglo \n");
+    printf("Cuantos numero deseas capturar: \n");
     scanf("%d",&n);
 int arreglo[n];
 
