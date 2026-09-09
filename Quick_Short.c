@@ -16,7 +16,7 @@ int main(void){
         scanf("%d", &arreglo[i]);
     }
 
-    // Ordena todo el arreglo
+    
     Ordenamiento(arreglo, 0, n - 1);
 
     printf("\nArreglo ordenado:\n");
@@ -37,7 +37,7 @@ void Ordenamiento(int *arreglo, int inicio, int fin){
         int i = inicio - 1;
         int aux;
 
-        // Partición
+      
         for(int j = inicio; j < fin; j++){
 
             if(arreglo[j] <= pivote){
@@ -50,17 +50,17 @@ void Ordenamiento(int *arreglo, int inicio, int fin){
             }
         }
 
-        // Colocar el pivote en su posición
+       
         aux = arreglo[i + 1];
         arreglo[i + 1] = arreglo[fin];
         arreglo[fin] = aux;
 
         int posicionPivote = i + 1;
 
-        // Ordenar lado izquierdo
+        
         Ordenamiento(arreglo, inicio, posicionPivote - 1);
 
-        // Ordenar lado derecho
+        
         Ordenamiento(arreglo, posicionPivote + 1, fin);
     }
 }
