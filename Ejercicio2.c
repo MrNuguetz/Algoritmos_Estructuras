@@ -36,3 +36,21 @@ double Calculo(int n){
 //T(n)= 1+1 +2n(3+1+3+1)+1
 //T(n)= 2+2n(8)+1
 //T(n)=16n +3
+/*
+double Calculo(int n, int i, double suma, int cambio){
+    if(i > n){
+        return suma;
+    }
+
+    if(cambio){
+        suma += (1.0 / i);
+        cambio--;
+    }
+    else{
+        suma -= (1.0 / i);
+        cambio++;
+    }
+
+    return Calculo(n, i + 1, suma, cambio);
+}
+*/
